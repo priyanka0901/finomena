@@ -1,5 +1,11 @@
-    //fetch data from json file
+    //global variables
     var store;
+    var click = 0;
+    var useranswer = [];
+    var rightanswer = 0;
+    var wronganswer = 0;
+
+    //fetch data from json file
     $.getJSON("data/data.json", function(data){ 
         store = data;
     });
@@ -20,22 +26,64 @@
     });
     
     //onclick of option inc counter
-    var click = 0;
     function counter() {
-        click += 1;
-        displayques(click);
+      if (click < store.length-1) {
+            click += 1;
+            displayques(click);
+        }else { //after ques display result
+            $('#ques-layout').css('display','none');
+            $('#page-layout').css('display','none');
+            $('#result-layout').css('display','block');
+            displayResult();
+            console.log(useranswer);
+        }
     };
 
-    //fetching user click option
-    var useroption = [];
+    //fetching user answer
     $('.ques-option').on('click', function(e) {
-        useroption.push(e.target.innerHTML);
+        useranswer.push(e.target.innerHTML);
         counter();
     });
-
     
 
+    //calculating right and wrong ans & display on result div
+    function displayResult() {
+        for(var i = 0; i < useranswer.length; i++) {
+            if(useranswer[i] === store[i].right){
+                rightanswer += 1;
+            }else {
+                wronganswer += 1;
+            }
+        }
+        graphmaker(rightanswer,wronganswer);
+        for(var i = 0; i <=4; i++){
+            $('.result-ques').append("<p>"+ store[i].ques +"</p>");
+            if(useranswer[i] === store[i].right){
+                $('.result-ques').append("<p>"+ useranswer[i] +"</p>");
+            } 
+            else{
+                $('.result-ques').append("<p>"+ useranswer[i] +"</p>", "<p>"+ store[i].right+"</p>");
+            }                   
+        }
+    }
     
+    //graph design
+    function graphmaker(right, wrong) {
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ["Right", "Wrong"],
+            datasets: [{
+              backgroundColor: [
+                "#2ecc71",
+                "#ff3b3b"
+              ],
+              data: [right, wrong]
+            }]
+          }
+        });
+    };
    
 
    
