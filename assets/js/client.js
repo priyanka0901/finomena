@@ -4,11 +4,13 @@
     var useranswer = [];
     var rightanswer = 0;
     var wronganswer = 0;
+    var username;
 
     //fetch data from json file
     $.getJSON("data/data.json", function(data){ 
         store = data;
     });
+    
     
     //layout of ques structure
     function displayques(i) {
@@ -19,11 +21,17 @@
     };
 
     //change div on submit click
-    $('#submit').on('click',function(){
-        $('#home').css('display','none');
-        $('#ques-layout').css('display','block');
-        displayques(0);
+    $('#submit').on('click',function(){ 
+        if($("#name").val().length > 0) {
+            username =  $("#name").val(); //retrive name 
+            $('#home').css('display','none');
+            $('#ques-layout').css('display','block');
+            displayques(0);
+        }else {
+            $("#home").append("<p>requried enter name</p>");
+        }
     });
+   
     
     //onclick of option inc counter
     function counter() {
@@ -35,7 +43,6 @@
             $('#page-layout').css('display','none');
             $('#result-layout').css('display','block');
             displayResult();
-            console.log(useranswer);
         }
     };
 
@@ -45,7 +52,6 @@
         counter();
     });
     
-
     //calculating right and wrong ans & display on result div
     function displayResult() {
         for(var i = 0; i < useranswer.length; i++) {
@@ -65,6 +71,7 @@
                 $('.result-ques').append("<p>"+ useranswer[i] +"</p>", "<p>"+ store[i].right+"</p>");
             }                   
         }
+         document.getElementById('userName').innerHTML = username;
     }
     
     //graph design

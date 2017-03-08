@@ -12,14 +12,13 @@
 
     <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css"> -->
 </head>
-
 <body>
     <div class="container">
         <div class="page-layout" id="page-layout" style="display: block;">
             <div class="home" id="home" style="display: block;">
                 <p>Welcome to quiz</p>
                     <label>Please enter your name</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" id="name">
                     <button type="submit" id="submit">Next</button>
             </div>
             <div class="ques-layout"  id="ques-layout" style="display: none;">
@@ -31,7 +30,7 @@
         </div>
         <div class="result-layout" id="result-layout" style="display: none;">
             <div class="result-graph">
-                <p>Hey Priyanka</p>
+                <p id="userName">Hey</p>
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>
             <div class="result-ques">
