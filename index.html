@@ -15,27 +15,37 @@
 <body>
     <div class="container">
         <div class="page-layout" id="page-layout" style="display: block;">
+        <nav class="navbar">
+            <p class="heading">Quiz</p>
+        </nav>
             <div class="home" id="home" style="display: block;">
-                <p>Welcome to quiz</p>
-                    <label>Please enter your name</label>
-                    <input type="text" name="name" id="name">
-                    <button type="submit" id="submit">Next</button>
+                <img src="assets/images/test.svg" class="quiz-img">
+                <label>Please enter your name</label>
+                <input type="text" name="name" id="name">
+                <button type="submit" id="submit" class="button">Next</button>
             </div>
             <div class="ques-layout"  id="ques-layout" style="display: none;">
                 <img src="" id="ques-img" class="ques-img">
                 <p id="ques-para" class="ques-para"></p>
-                <p id="ques-option1" class="ques-option"></p>
-                <p id="ques-option2" class="ques-option"></p>
+                <ul>
+                    <li><a id="ques-option1" class="ques-option"></a></li>
+                    <li><a id="ques-option2" class="ques-option"></a></li>
+                </ul>
             </div>
         </div>
         <div class="result-layout" id="result-layout" style="display: none;">
-            <div class="result-graph">
-                <p id="userName">Hey</p>
-                <canvas id="myChart" width="400" height="400"></canvas>
+            <div class="result-heading">
+                <a>Hey! </a> 
+                <a id="userName" style="font-weight: 600:"></a> 
+                <a>,your result </a>
             </div>
-            <div class="result-ques">
-                <p>Your result </p>
-            </div>
+            <div class="result-container">
+                <div class="result-graph">
+                    <canvas id="myChart" width="400px" height="400px"></canvas>
+                </div>
+                <div class="result-ques">
+                </div>
+            </div>       
         </div>
     </div>
 

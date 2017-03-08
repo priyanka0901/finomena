@@ -28,7 +28,7 @@
             $('#ques-layout').css('display','block');
             displayques(0);
         }else {
-            $("#home").append("<p>requried enter name</p>");
+            $("#home").append('<p class="required">required name</p>');
         }
     });
    
@@ -63,12 +63,12 @@
         }
         graphmaker(rightanswer,wronganswer);
         for(var i = 0; i <=4; i++){
-            $('.result-ques').append("<p>"+ store[i].ques +"</p>");
+            $('.result-ques').append("<p class='question'>"+ store[i].ques +"</p>");
             if(useranswer[i] === store[i].right){
-                $('.result-ques').append("<p>"+ useranswer[i] +"</p>");
+                $('.result-ques').append("<p class='useranswer'>"+ useranswer[i] +"</p>");
             } 
             else{
-                $('.result-ques').append("<p>"+ useranswer[i] +"</p>", "<p>"+ store[i].right+"</p>");
+                $('.result-ques').append("<p class='useranswer'>"+ useranswer[i] +"</p>", "<p class='rightanswer'>"+ store[i].right+"</p>");
             }                   
         }
          document.getElementById('userName').innerHTML = username;
@@ -92,6 +92,34 @@
         });
     };
    
+   //ripple effect
+var parent, ink, d, x, y;
+$("ul li a").click(function(e){
+    parent = $(this).parent();
+    //create .ink element if it doesn't exist
+    if(parent.find(".ink").length == 0)
+        parent.prepend("<span class='ink'></span>");
+        
+    ink = parent.find(".ink");
+    //incase of quick double clicks stop the previous animation
+    ink.removeClass("animate");
+    
+    //set size of .ink
+    if(!ink.height() && !ink.width())
+    {
+        //use parent's width or height whichever is larger for the diameter to make a circle which can cover the entire element.
+        d = Math.max(parent.outerWidth(), parent.outerHeight());
+        ink.css({height: d, width: d});
+    }
+    
+    //get click coordinates
+    //logic = click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center;
+    x = e.pageX - parent.offset().left - ink.width()/2;
+    y = e.pageY - parent.offset().top - ink.height()/2;
+    
+    //set the position and add class .animate
+    ink.css({top: y+'px', left: x+'px'}).addClass("animate");
+})
 
    
 

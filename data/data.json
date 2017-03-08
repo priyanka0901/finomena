@@ -1,34 +1,34 @@
 [
    {
-    "img" : "https://www.w3schools.com/css/trolltunga.jpg",
+    "img" : "https://images.pexels.com/photos/92989/pexels-photo-92989.jpeg?h=350&auto=compress&cs=tinysrgb",
     "ques"   : "How long is the Great Wall of China?",
     "option1": "4000 miles",
     "option2": "5000 miles",
     "right"  :  "4000 miles"
     },
     {
-    "img" : "https://cdn.pixabay.com/photo/2016/03/28/12/35/cat-1285634_960_720.png",
+    "img"    : "https://images.pexels.com/photos/90786/pexels-photo-90786.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
     "ques"   : "From which cactus is tequila made?",
     "option1": "Agave",
     "option2": "Belch",
     "right"  : "Agave"
     },
     {
-    "img" : "http://hdwallpapershdpics.com/wp-content/uploads/2015/08/free_high_resolution_images_for_download-1.jpg",
+    "img"    : "https://images.pexels.com/photos/128388/pexels-photo-128388.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
     "ques"   : "What is called a meal in open air?",
     "option1": "Picnic",
     "option2": "Lunch",
     "right"  : "Lunch"
     },
     {
-    "img" : "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR6ptooYOxuo8u3SML1l8dW1CkqioocaFCXYaykoGxcOivYS-E",
+    "img"    : "https://images.pexels.com/photos/6401/food-kitchen-cooking-spices.jpg?w=1260&h=750&auto=compress&cs=tinysrgb",
     "ques"   : "What is the chemical formula for Table Salt?",
     "option1": "NaCl",
     "option2": "Chcl",
     "right"  : "Chcl"
     },
     {
-    "img" : "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR6ptooYOxuo8u3SML1l8dW1CkqioocaFCXYaykoGxcOivYS-E",
+    "img"    : "https://images.pexels.com/photos/7736/food-night-alcohol-beer.jpg?w=1260&h=750&auto=compress&cs=tinysrgb",
     "ques"   : "What beer is marketed as The king of beers?",
     "option1": "Budweiser",
     "option2": "Brewberry",
