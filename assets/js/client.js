@@ -28,7 +28,7 @@
             $('#ques-layout').css('display','block');
             displayques(0);
         }else {
-            $("#home").append('<p class="required">required name</p>');
+            $(".required").css('display','block');
         }
     });
    
